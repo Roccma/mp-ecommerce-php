@@ -3,7 +3,7 @@ error_reporting(E_ERROR & E_PARSE);
 // SDK de Mercado Pago
 require __DIR__ .  '/vendor/autoload.php';
 
-$base_url = "http://localhost:8081/mp-ecommerce-php/";
+$base_url = "https://mp-ecommerce-php-mrocca.herokuapp.com/";
 
 // Agrega credenciales
 MercadoPago\SDK::setAccessToken('APP_USR-6317427424180639-042414-47e969706991d3a442922b0702a0da44-469485398');
