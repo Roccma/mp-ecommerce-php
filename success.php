@@ -26,6 +26,7 @@ $merchant_account_id = isset($_GET['merchant_account_id']) ? $_GET['merchant_acc
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="format-detection" content="telephone=no">
+    <script src="https://www.mercadopago.com/v2/security.js"></script>
 
     <script
     src="https://code.jquery.com/jquery-3.4.1.min.js"

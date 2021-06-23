@@ -31,6 +31,7 @@ $merchant_account_id = isset($_GET['merchant_account_id']) ? $_GET['merchant_acc
     src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
     crossorigin="anonymous"></script>
+    <script src="https://www.mercadopago.com/v2/security.js"></script>
 
     <link rel="stylesheet" href="./assets/category-landing.css" media="screen, print">
 
