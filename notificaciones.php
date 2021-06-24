@@ -12,17 +12,17 @@
     
     switch($_REQUEST["type"]) {
         case "payment":
-            $payment = MercadoPago\Payment.find_by_id($_POST["id"]);
+            $payment = MercadoPago\Payment.find_by_id($_REQUEST["id"]);
             fwrite( $fp , "Payment: " . var_export($payment, true) . PHP_EOL);
             break;
         case "plan":
-            $plan = MercadoPago\Plan.find_by_id($_POST["id"]);
+            $plan = MercadoPago\Plan.find_by_id($_REQUEST["id"]);
             break;
         case "subscription":
-            $plan = MercadoPago\Subscription.find_by_id($_POST["id"]);
+            $plan = MercadoPago\Subscription.find_by_id($_REQUEST["id"]);
             break;
         case "invoice":
-            $plan = MercadoPago\Invoice.find_by_id($_POST["id"]);
+            $plan = MercadoPago\Invoice.find_by_id($_REQUEST["id"]);
             break;
     }
 
