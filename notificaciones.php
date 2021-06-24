@@ -9,6 +9,14 @@
     $fp = fopen('logs.txt', 'a');
     fwrite( $fp , "REQUEST: " . var_export($_REQUEST, true) . PHP_EOL);
     fwrite( $fp , "GET: " . var_export($_GET, true) . PHP_EOL);
+
+    // Get the JSON contents
+    $json = file_get_contents('php://input');
+
+    fwrite( $fp , "JSON: " . $json . PHP_EOL);
+
+    // decode the json data
+    $data = json_decode($json);
     
     
     switch($_REQUEST["type"]) {
