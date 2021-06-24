@@ -3,7 +3,7 @@ error_reporting(E_ERROR & E_PARSE);
 // SDK de Mercado Pago
 require __DIR__ .  '/vendor/autoload.php';
 
-$base_url = "https://mp-ecommerce-php-mrocca.herokuapp.com/";
+$base_url = "https://mp-ecommerce-php-mrocca.herokuapp.com";
 
 // Agrega credenciales
 MercadoPago\SDK::setAccessToken('APP_USR-6317427424180639-042414-47e969706991d3a442922b0702a0da44-469485398');
@@ -18,7 +18,7 @@ $item = new MercadoPago\Item();
 $item->id = 1234;
 $item->title = $_POST['title'];
 $item->description = "Dispositivo móvil de Tienda e-commerce";
-$item->picture_url = !empty($_POST['img']) ? $_POST['img'] : '';
+$item->picture_url = !empty($_POST['img']) ? $base_url . $_POST['img'] : '';
 $item->quantity = !empty($_POST['unit']) ? $_POST['unit'] : 1;
 $item->unit_price = !empty($_POST['price']) ? $_POST['price'] : 50;
 $preference->external_reference = "mauroroccaf@gmail.com";
@@ -36,19 +36,19 @@ $preference->payment_methods = array(
 );
 
 $preference->back_urls = [
-    "success" => $base_url . "success.php",
-    "pending" => $base_url . "pending.php",
-    "failure" => $base_url . "failure.php",
+    "success" => $base_url . "/success.php",
+    "pending" => $base_url . "/pending.php",
+    "failure" => $base_url . "/failure.php",
 ];
 
 $preference->auto_return = "approved";
 
-$preference->notification_url = $base_url . "notificaciones.php";
+$preference->notification_url = $base_url . "/notificaciones.php";
 
 $payer = new MercadoPago\Payer();
 $payer->name = "Lalo";
 $payer->surname = "Landa";
-$payer->email = "test_user@testuser.com";
+$payer->email = "test_user_63274575@testuser.com";
 
 $payer->phone = [
     "area_code" => "11",
@@ -58,7 +58,7 @@ $payer->phone = [
 $payer->address = [
     "street_name" => "Falsa",
     "street_number" => 123,
-    "zip_code" => "111"
+    "zip_code" => "1111"
 ];
 
 $preference->payer = $payer; 
