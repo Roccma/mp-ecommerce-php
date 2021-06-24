@@ -8,11 +8,13 @@
 
     $fp = fopen('logs.txt', 'a');
     fwrite( $fp , "REQUEST: " . var_export($_REQUEST, true) . PHP_EOL);
+    fwrite( $fp , "GET: " . var_export($_GET, true) . PHP_EOL);
     
     
     switch($_REQUEST["type"]) {
         case "payment":
-            $payment = MercadoPago\Payment.find_by_id($_REQUEST["id"]);
+            fwrite( $fp , "Payment 1: ");
+            $payment = MercadoPago\Payment.find_by_id($_REQUEST["data_id"]);
             fwrite( $fp , "Payment: " . var_export($payment, true) . PHP_EOL);
             break;
         case "plan":
