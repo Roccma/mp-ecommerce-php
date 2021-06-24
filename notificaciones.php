@@ -14,7 +14,7 @@
     switch($_REQUEST["type"]) {
         case "payment":
             fwrite( $fp , "Payment 1: ");
-            $payment = MercadoPago\Payment.find_by_id($_REQUEST["data_id"]);
+            $payment = MercadoPago\Payment::find_by_id($_REQUEST["data_id"]);
             fwrite( $fp , "Payment: " . var_export($payment, true) . PHP_EOL);
             break;
         case "plan":
