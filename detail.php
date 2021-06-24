@@ -19,6 +19,7 @@ $item->id = 1234;
 $item->title = $_POST['title'];
 $item->quantity = !empty($_POST['unit']) ? $_POST['unit'] : 1;
 $item->unit_price = !empty($_POST['price']) ? $_POST['price'] : 50;
+$item->picture_url = !empty($_POST['img']) ? $_POST['img'] : '';
 $preference->items = array($item);
 
 $preference->external_reference = "mauroroccaf@gmail.com";
