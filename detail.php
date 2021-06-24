@@ -17,12 +17,13 @@ $preference = new MercadoPago\Preference();
 $item = new MercadoPago\Item();
 $item->id = 1234;
 $item->title = $_POST['title'];
+$item->description = "Dispositivo móvil de Tienda e-commerce";
+$item->picture_url = !empty($_POST['img']) ? $_POST['img'] : '';
 $item->quantity = !empty($_POST['unit']) ? $_POST['unit'] : 1;
 $item->unit_price = !empty($_POST['price']) ? $_POST['price'] : 50;
-$item->picture_url = !empty($_POST['img']) ? $_POST['img'] : '';
-$preference->items = array($item);
-
 $preference->external_reference = "mauroroccaf@gmail.com";
+
+$preference->items = array($item);
 
 $preference->payment_methods = array(
     "excluded_payment_types" => array(
@@ -32,7 +33,7 @@ $preference->payment_methods = array(
         array("id" => "amex")
     ),  
     "installments" => 6
-  );
+);
 
 $preference->back_urls = [
     "success" => $base_url . "success.php",
@@ -194,10 +195,10 @@ $preference->save();
                                             </h3>
                                         </div>
                                         <h3 >
-                                            <?php echo $_POST['price'] ?>
+                                            <?php echo "$" . $_POST['price'] ?>
                                         </h3>
                                         <h3 >
-                                            <?php echo "$" . $_POST['unit'] ?>
+                                            <?php echo $_POST['unit'] ?>
                                         </h3>
                                     </div>
                                     <div class="checkoutmp">
