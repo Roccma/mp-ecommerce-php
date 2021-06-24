@@ -41,6 +41,7 @@ $preference->back_urls = [
 
 $preference->auto_return = "approved";
 
+$preference->notification_url = $base_url . "notificaciones.php";
 
 $payer = new MercadoPago\Payer();
 $payer->name = "Lalo";

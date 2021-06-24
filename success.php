@@ -1,8 +1,8 @@
 <?php
 
-/*if( !isset( $_GET['collection_id'] ) ){
+if( !isset( $_GET['collection_id'] ) ){
     header('Location: index.php');
-}*/
+}
 
 $collection_id = isset($_GET['collection_id']) ? $_GET['collection_id'] : "";
 $collection_status = isset($_GET['collection_status']) ? $_GET['collection_status'] : "";
